@@ -1,56 +1,132 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>Natural Park</title>
-<style>
-body{font-family:Arial;background:#f7f1e6;margin:0;color:#222}
-header{background:#173f2b;color:white;text-align:center;padding:40px}
-h1{font-size:44px}
-section{max-width:900px;margin:auto;padding:20px}
-.card{background:white;margin:12px 0;padding:16px;border-radius:14px}
-.price{float:right;color:#173f2b;font-weight:bold}
-a{display:inline-block;margin:8px;padding:12px 18px;background:#d6a84f;color:#173f2b;text-decoration:none;border-radius:25px;font-weight:bold}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Natural Park Menü</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f0e6;
+      color: #2b2b2b;
+    }
+    header {
+      background: linear-gradient(rgba(0,70,35,.75), rgba(0,70,35,.75)), url("IMG_5360.jpeg");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+    header h1 {
+      font-size: 42px;
+      margin: 0;
+    }
+    header p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .hero-img {
+      width: 100%;
+      max-height: 320px;
+      object-fit: cover;
+      display: block;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 25px;
+    }
+    h2 {
+      background: #0f4d2e;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 12px;
+      margin-top: 35px;
+    }
+    .item {
+      background: white;
+      margin: 12px 0;
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    .item span:first-child {
+      font-weight: 600;
+    }
+    .price {
+      font-weight: bold;
+      color: #0f4d2e;
+      white-space: nowrap;
+    }
+    .desc {
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      line-height: 1.6;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+    footer {
+      text-align: center;
+      background: #0f4d2e;
+      color: white;
+      padding: 25px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
+
 <header>
-<h1>Natural Park</h1>
-<p>Doğanın İçinde Lezzet</p>
-<a href="tel:+905334365572">Ara</a>
-<a href="https://wa.me/905334365572">WhatsApp</a>
+  <h1>Natural Park</h1>
+  <p>Doğanın İçinde Lezzet</p>
 </header>
 
-<section>
-<h2>Kahvaltı</h2>
-<div class="card"><b>Serpme Kahvaltı</b><span class="price">600 TL</span><p>Sahanda yumurta, zeytin, bal, tereyağı, domates, salatalık, beyaz peynir, kaşar, çökelek, tavada kaşarlı mantar ve çay.</p></div>
+<img src="IMG_5361.jpeg" class="hero-img" alt="Natural Park Gözleme">
 
-<h2>Gözleme Çeşitleri</h2>
-<div class="card">Patatesli Gözleme <span class="price">250 TL</span></div>
-<div class="card">Kıymalı Gözleme <span class="price">300 TL</span></div>
-<div class="card">Peynirli Gözleme <span class="price">250 TL</span></div>
-<div class="card">Patlıcanlı Gözleme <span class="price">250 TL</span></div>
-<div class="card">Patlıcanlı Kaşarlı Gözleme <span class="price">300 TL</span></div>
-<div class="card">Kıymalı Kaşarlı Gözleme <span class="price">400 TL</span></div>
-<div class="card">Kaşarlı Gözleme <span class="price">250 TL</span></div>
-<div class="card">Patatesli Kaşarlı Gözleme <span class="price">300 TL</span></div>
-<div class="card">Otlu Peynirli Gözleme <span class="price">250 TL</span></div>
+<div class="container">
 
-<h2>Ana Lezzetler</h2>
-<div class="card">Sac Kavurma 200 gr <span class="price">500 TL</span></div>
-<div class="card">Karışık Tost <span class="price">200 TL</span></div>
-<div class="card">Menemen <span class="price">350 TL</span></div>
-<div class="card">Sigara Böreği <span class="price">200 TL</span></div>
+  <h2>Gözleme Çeşitleri</h2>
+  <div class="item"><span>El Açması Patatesli Gözleme</span><span class="price">250 TL</span></div>
+  <div class="item"><span>El Açması Kıymalı Gözleme</span><span class="price">300 TL</span></div>
+  <div class="item"><span>El Açması Peynirli Gözleme</span><span class="price">250 TL</span></div>
+  <div class="item"><span>El Açması Patlıcanlı Gözleme</span><span class="price">250 TL</span></div>
+  <div class="item"><span>El Açması Patlıcanlı Kaşarlı Gözleme</span><span class="price">300 TL</span></div>
+  <div class="item"><span>El Açması Kıymalı Kaşarlı Gözleme</span><span class="price">400 TL</span></div>
+  <div class="item"><span>El Açması Kaşarlı Gözleme</span><span class="price">250 TL</span></div>
+  <div class="item"><span>El Açması Patatesli Kaşarlı Gözleme</span><span class="price">300 TL</span></div>
+  <div class="item"><span>El Açması Otlu Peynirli Gözleme</span><span class="price">250 TL</span></div>
 
-<h2>İçecekler</h2>
-<div class="card">Çay <span class="price">20 TL</span></div>
-<div class="card">Türk Kahvesi <span class="price">70 TL</span></div>
-<div class="card">Paket Ayran <span class="price">30 TL</span></div>
-<div class="card">Kola / Fanta / Sprite <span class="price">80 TL</span></div>
+  <h2>Kavurma & Tost</h2>
+  <div class="item"><span>Sac Kavurma (150g Tek Kişilik)</span><span class="price">500 TL</span></div>
+  <div class="item"><span>Karışık Tost<br><small>Sucuk, kaşar, domates, mayonez, ketçap, salça</small></span><span class="price">300 TL</span></div>
+  <div class="item"><span>Kaşarlı Tost</span><span class="price">200 TL</span></div>
+  <div class="item"><span>Menemen</span><span class="price">350 TL</span></div>
 
-<h2>İletişim</h2>
-<p>Denizli Muğla Yolu, 48640 Ula / Muğla</p>
-<p>0533 436 55 72</p>
-</section>
+  <h2>Kahvaltı</h2>
+  <div class="item"><span>Serpme Kahvaltı</span><span class="price">600 TL</span></div>
+  <div class="desc">
+    Bahçeden domates, bahçeden salatalık, bahçeden biber, doğal çökelek peyniri,
+    beyaz peynir, kaşar peyniri, bal-tereyağ, yeşillik, yumurta,
+    kaşarlı mantar, zeytin, reçel çeşitleri.
+  </div>
+
+  <h2>İçecekler</h2>
+  <div class="item"><span>Çay</span><span class="price">20 TL</span></div>
+  <div class="item"><span>Kutu Ayran</span><span class="price">30 TL</span></div>
+  <div class="item"><span>Türk Kahvesi</span><span class="price">70 TL</span></div>
+  <div class="item"><span>Meşrubatlar<br><small>Cola, Fanta, Sprite</small></span><span class="price">80 TL</span></div>
+
+</div>
+
+<footer>
+  <p>Natural Park</p>
+  <p>Doğal Lezzet, Huzurlu Anlar...</p>
+</footer>
+
 </body>
 </html>
