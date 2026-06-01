@@ -4,47 +4,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Natural Park Menü</title>
+
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: #f5f0e6;
-      color: #2b2b2b;
+      color: #222;
     }
+
     header {
-      background: linear-gradient(rgba(0,70,35,.75), rgba(0,70,35,.75)), url("IMG_5360.jpeg");
+      background: linear-gradient(rgba(15, 77, 46, 0.80), rgba(15, 77, 46, 0.80)),
+      url("483236ba-89bd-4a15-b565-0d6a377187a0.jpeg");
       background-size: cover;
       background-position: center;
       color: white;
       text-align: center;
       padding: 70px 20px;
     }
+
     header h1 {
-      font-size: 42px;
+      font-size: 44px;
       margin: 0;
     }
+
     header p {
       font-size: 18px;
       margin-top: 10px;
     }
+
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .buttons a {
+      display: inline-block;
+      background: #f0b429;
+      color: #173f2a;
+      padding: 10px 18px;
+      margin: 5px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
     .hero-img {
       width: 100%;
       max-height: 320px;
       object-fit: cover;
       display: block;
     }
+
     .container {
       max-width: 900px;
       margin: auto;
       padding: 25px;
     }
+
     h2 {
       background: #0f4d2e;
       color: white;
-      padding: 12px 18px;
+      padding: 13px 18px;
       border-radius: 12px;
       margin-top: 35px;
     }
+
     .item {
       background: white;
       margin: 12px 0;
@@ -55,14 +79,22 @@
       justify-content: space-between;
       gap: 15px;
     }
+
     .item span:first-child {
       font-weight: 600;
     }
+
     .price {
       font-weight: bold;
       color: #0f4d2e;
       white-space: nowrap;
     }
+
+    small {
+      font-weight: normal;
+      color: #555;
+    }
+
     .desc {
       background: white;
       padding: 16px;
@@ -70,23 +102,38 @@
       line-height: 1.6;
       box-shadow: 0 2px 8px rgba(0,0,0,.08);
     }
+
     footer {
       text-align: center;
       background: #0f4d2e;
       color: white;
-      padding: 25px;
+      padding: 28px 15px;
       margin-top: 40px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      margin: 8px 10px;
+      font-weight: bold;
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Natural Park</h1>
   <p>Doğanın İçinde Lezzet</p>
+
+  <div class="buttons">
+    <a href="tel:05551234567">Ara</a>
+    <a href="https://wa.me/905551234567">WhatsApp</a>
+  </div>
 </header>
 
-<img src="483236ba-89bd-4a15-b565-0d6a377187a0.jpeg" class="hero-img" alt="Natural Park Gözleme">
+<img src="483236ba-89bd-4a15-b565-0d6a377187a0.jpeg" class="hero-img" alt="Natural Park">
 
 <div class="container">
 
@@ -102,7 +149,7 @@
   <div class="item"><span>El Açması Otlu Peynirli Gözleme</span><span class="price">250 TL</span></div>
 
   <h2>Kavurma & Tost</h2>
-  <div class="item"><span>Sac Kavurma (150g Tek Kişilik)</span><span class="price">500 TL</span></div>
+  <div class="item"><span>Sac Kavurma<br><small>150g tek kişilik</small></span><span class="price">500 TL</span></div>
   <div class="item"><span>Karışık Tost<br><small>Sucuk, kaşar, domates, mayonez, ketçap, salça</small></span><span class="price">300 TL</span></div>
   <div class="item"><span>Kaşarlı Tost</span><span class="price">200 TL</span></div>
   <div class="item"><span>Menemen</span><span class="price">350 TL</span></div>
@@ -123,67 +170,18 @@
 
 </div>
 
-<footer><footer>
+<footer>
   <p><strong>Natural Park</strong></p>
   <p>Doğal Lezzet, Huzurlu Anlar...</p>
 
-  <div style="margin-top:15px;">
-    <a href="tel:05551234567" style="color:white; text-decoration:none; margin:8px; display:inline-block;">
-      📞 Ara
-    </a>
-
-    <a href="https://wa.me/905551234567" style="color:white; text-decoration:none; margin:8px; display:inline-block;">
-      💬 WhatsApp
-    </a>
-
-    <a href="https://maps.google.com" style="color:white; text-decoration:none; margin:8px; display:inline-block;">
-      📍 Konum
-    </a>
+  <div>
+    <a href="tel:05551234567">📞 Ara</a>
+    <a href="https://wa.me/905551234567">💬 WhatsApp</a>
+    <a href="https://maps.google.com">📍 Konum</a>
   </div>
 
-  <p style="margin-top:15px;">
-    Adres: Buraya işletme adresi gelecek
-  </p>
-</footer><footer>
-  <p><strong>Natural Park</strong></p>
-  <p>Doğal Lezzet, Huzurlu Anlar...</p>
-
-  <div style="margin-top:15px;">
-    <a href="tel:05551234567" style="color:white; text-decoration:none; margin:8px; display:inline-block;">
-      📞 Ara
-    </a>
-
-    <a href="https://wa.me/905551234567" style="color:white; text-decoration:none; margin:8px; display:inline-block;">
-      💬 WhatsApp
-    </a>
-
-    <a href="https://maps.google.com" style="color:white; text-decoration:none; margin:8px; display:inline-block;">
-      📍 Konum
-    </a>
-  </div>
-
-  <p style="margin-top:15px;">
-    Adres: Buraya işletme adresi gelecek
-  </p>
-</footer><footer>
-  <p><strong>Natural Park</strong></p>
-  <p>Doğal Lezzet, Huzurlu Anlar...</p>
-
-  <div style="margin-top:15px;">
-    <a href="tel:05551234567" style="color:white; text-decoration:none; margin:8px; display:inline-block;">
-      📞 Ara
-    </a>
-
-    <a href="https://wa.me/905551234567" style="color:white; text-decoration:none; margin:8px; display:inline-block;">
-      💬 WhatsApp
-    </a>
-
-    <a href="https://maps.google.com" style="color:white; text-decoration:none; margin:8px; display:inline-block;">
-      📍 Konum
-    </a>
-  </div>
-
-  <p style="margin-top:15px;">
-    Adres: Buraya işletme adresi gelecek
-  </p>
+  <p>Adres: Buraya işletme adresi gelecek</p>
 </footer>
+
+</body>
+</html>
