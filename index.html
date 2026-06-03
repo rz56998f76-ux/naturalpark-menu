@@ -3,245 +3,509 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#153c27">
 <title>Natural Park Menü</title>
 
 <style>
+:root{
+  --forest:#153c27;
+  --leaf:#2f6b43;
+  --sage:#e4ead9;
+  --paper:#fffdf6;
+  --cream:#f6f1e6;
+  --sun:#f0bd3b;
+  --clay:#a95334;
+  --ink:#1f261f;
+  --muted:#6b746a;
+  --line:rgba(31,38,31,.12);
+  --shadow:0 18px 45px rgba(34,45,29,.13);
+}
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-background:#f5f3eb;
-color:#222;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:Arial, sans-serif;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+a:focus-visible{
+  outline:3px solid rgba(240,189,59,.82);
+  outline-offset:3px;
 }
 
 .hero{
-height:70vh;
-background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-;url("images/gozleme.jpeg")
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
+  min-height:76vh;
+  background:
+    linear-gradient(90deg, rgba(9,27,17,.82), rgba(9,27,17,.38) 58%, rgba(9,27,17,.58)),
+    url("images/gozleme.jpeg");
+  background-size:cover;
+  background-position:center;
+  color:white;
+  display:flex;
+  align-items:flex-end;
+  padding:28px;
 }
 
-.hero-content h1{
-font-size:60px;
-margin-bottom:10px;
+.hero-inner{
+  width:min(1120px, 100%);
+  margin:0 auto;
+  padding:80px 0 36px;
 }
 
-.hero-content p{
-font-size:20px;
-margin-bottom:25px;
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border:1px solid rgba(255,255,255,.34);
+  border-radius:999px;
+  background:rgba(255,255,255,.12);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0;
+}
+
+.hero h1{
+  max-width:720px;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:72px;
+  line-height:.95;
+  margin:18px 0 14px;
+}
+
+.hero p{
+  max-width:560px;
+  font-size:20px;
+  line-height:1.55;
+  color:rgba(255,255,255,.9);
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:26px;
 }
 
 .btn{
-display:inline-block;
-padding:12px 20px;
-margin:5px;
-border-radius:30px;
-text-decoration:none;
-font-weight:bold;
+  min-height:46px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 16px;
+  border-radius:999px;
+  font-weight:800;
+  box-shadow:0 10px 24px rgba(0,0,0,.16);
+  transition:transform .18s ease, box-shadow .18s ease;
 }
 
-.call{
-background:#f4c542;
-color:#173b25;
+.btn:hover,
+.category-nav a:hover,
+.footer-links a:hover{
+  transform:translateY(-1px);
 }
 
-.whatsapp{
-background:#25D366;
-color:white;
+.btn-icon{
+  font-size:16px;
+  line-height:1;
 }
 
-.instagram{
-background:#E1306C;
-color:white;
+.call{background:var(--sun);color:#18301f;}
+.whatsapp{background:#25D366;color:white;}
+.instagram{background:#d83367;color:white;}
+.location{background:white;color:var(--forest);}
+
+.quick-info{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:12px;
+  width:min(1120px, calc(100% - 32px));
+  margin:-38px auto 0;
+  position:relative;
+  z-index:2;
 }
 
-.location{
-background:#0f4d2e;
-color:white;
+.info-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:16px;
+  box-shadow:var(--shadow);
 }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:25px;
+.info-card strong{
+  display:block;
+  color:var(--forest);
+  margin-bottom:4px;
+}
+
+.info-card span{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.45;
+}
+
+.menu-shell{
+  width:min(1120px, 100%);
+  margin:0 auto;
+  padding:28px 16px 0;
+}
+
+.category-nav{
+  position:sticky;
+  top:0;
+  z-index:4;
+  margin:20px -16px 18px;
+  padding:12px 16px;
+  background:rgba(246,241,230,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+  overflow:auto;
+  white-space:nowrap;
+}
+
+.category-nav a{
+  display:inline-flex;
+  align-items:center;
+  min-height:38px;
+  padding:9px 13px;
+  margin-right:8px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--paper);
+  color:var(--forest);
+  font-size:14px;
+  font-weight:800;
+  transition:transform .18s ease, border-color .18s ease;
+}
+
+.menu-section{
+  scroll-margin-top:80px;
+  margin:28px 0 34px;
 }
 
 .section-title{
-background:#0f4d2e;
-color:white;
-padding:15px;
-border-radius:12px;
-margin:35px 0 15px;
-font-size:24px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px;
+  padding-bottom:12px;
+  border-bottom:2px solid rgba(21,60,39,.16);
+}
+
+.section-title h2{
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:32px;
+  line-height:1.1;
+  color:var(--forest);
+}
+
+.section-title span{
+  color:var(--muted);
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.items{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:10px;
+}
+
+.item,
+.desc{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:8px;
+  box-shadow:0 10px 28px rgba(34,45,29,.08);
 }
 
 .item{
-background:white;
-padding:15px;
-margin-bottom:10px;
-border-radius:12px;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
-display:flex;
-justify-content:space-between;
-align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+  min-height:70px;
+  padding:16px;
+}
+
+.item span:first-child{
+  line-height:1.35;
+  font-weight:700;
+}
+
+.item small{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:13px;
+  font-weight:400;
+  line-height:1.4;
 }
 
 .price{
-font-weight:bold;
-color:#0f4d2e;
+  flex:0 0 auto;
+  color:var(--clay);
+  font-weight:900;
+  white-space:nowrap;
 }
 
-.kahvalti{
-background:white;
-padding:20px;
-border-radius:12px;
-line-height:1.7;
-box-shadow:0 2px 10px rgba(0,0,0,.08);
+.desc{
+  grid-column:1 / -1;
+  padding:18px;
+  color:#3f493e;
+  line-height:1.7;
 }
 
 footer{
-background:#0f4d2e;
-color:white;
-text-align:center;
-padding:40px 20px;
-margin-top:50px;
+  background:var(--forest);
+  color:white;
+  margin-top:42px;
+  padding:42px 16px;
+}
+
+.footer-inner{
+  width:min(1120px, 100%);
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:24px;
+  align-items:start;
 }
 
 footer h3{
-margin-bottom:15px;
+  font-family:Georgia, "Times New Roman", serif;
+  font-size:34px;
+  margin-bottom:8px;
 }
 
 footer p{
-margin:8px 0;
+  color:rgba(255,255,255,.82);
+  line-height:1.7;
 }
 
-@media(max-width:768px){
-
-.hero-content h1{
-font-size:40px;
+.footer-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  justify-content:flex-end;
 }
 
-.item{
-font-size:14px;
+.footer-links a{
+  display:inline-flex;
+  align-items:center;
+  min-height:42px;
+  padding:10px 13px;
+  border:1px solid rgba(255,255,255,.24);
+  border-radius:999px;
+  font-weight:800;
+  transition:transform .18s ease, background .18s ease;
 }
 
+.footer-links a:hover{
+  background:rgba(255,255,255,.08);
 }
 
+@media(max-width:800px){
+  .hero{
+    min-height:68vh;
+    padding:18px;
+  }
+
+  .hero-inner{
+    padding:56px 0 34px;
+  }
+
+  .hero h1{
+    font-size:48px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+
+  .hero-actions{
+    display:grid;
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .btn{
+    width:100%;
+    padding:12px 10px;
+    font-size:14px;
+  }
+
+  .quick-info,
+  .items,
+  .footer-inner{
+    grid-template-columns:1fr;
+  }
+
+  .quick-info{
+    margin-top:14px;
+  }
+
+  .section-title h2{
+    font-size:28px;
+  }
+
+  .section-title span{
+    display:none;
+  }
+
+  .footer-links{
+    justify-content:flex-start;
+  }
+}
+
+@media(max-width:420px){
+  .hero h1{
+    font-size:40px;
+  }
+
+  .hero-actions{
+    grid-template-columns:1fr;
+  }
+
+  .item{
+    padding:14px;
+  }
+}
 </style>
 </head>
 
 <body>
 
 <section class="hero">
-<div class="hero-content">
-<h1>Natural Park</h1>
-<p>Doğanın İçinde Lezzet</p>
+  <div class="hero-inner">
+    <div class="eyebrow">Natural Park Menü</div>
+    <h1>Natural Park</h1>
+    <p>Doğanın içinde hazırlanan sıcak gözlemeler, kahvaltı lezzetleri ve yoldan geçenlere iyi gelen sakin bir mola.</p>
 
-<a class="btn call" href="tel:05334365572">📞 Ara</a>
-
-<a class="btn whatsapp"
-href="https://wa.me/905334365572">
-💬 WhatsApp
-</a>
-
-<a class="btn instagram"
-href="https://instagram.com/naturel_park_np">
-📷 Instagram
-</a>
-
-<a class="btn location"
-href="https://maps.google.com">
-📍 Konum
-</a>
-
-</div>
+    <div class="hero-actions">
+      <a class="btn call" href="tel:05334365572"><span class="btn-icon" aria-hidden="true">☎</span>Ara</a>
+      <a class="btn whatsapp" href="https://wa.me/905334365572"><span class="btn-icon" aria-hidden="true">✆</span>WhatsApp</a>
+      <a class="btn instagram" href="https://instagram.com/naturel_park_np"><span class="btn-icon" aria-hidden="true">◎</span>Instagram</a>
+      <a class="btn location" href="https://www.google.com/maps/search/Denizli+Muğla+Yolu+48640+Ula+Muğla+Türkiye"><span class="btn-icon" aria-hidden="true">⌖</span>Konum</a>
+    </div>
+  </div>
 </section>
 
-<div class="container">
-
-<div class="section-title">🥞 Gözleme Çeşitleri</div>
-
-<div class="item"><span>El Açması Patatesli Gözleme</span><span class="price">250 TL</span></div>
-
-<div class="item"><span>El Açması Kıymalı Gözleme</span><span class="price">300 TL</span></div>
-
-<div class="item"><span>El Açması Peynirli Gözleme</span><span class="price">250 TL</span></div>
-
-<div class="item"><span>El Açması Patlıcanlı Gözleme</span><span class="price">250 TL</span></div>
-
-<div class="item"><span>El Açması Patlıcanlı Kaşarlı Gözleme</span><span class="price">300 TL</span></div>
-
-<div class="item"><span>El Açması Kıymalı Kaşarlı Gözleme</span><span class="price">400 TL</span></div>
-
-<div class="item"><span>El Açması Kaşarlı Gözleme</span><span class="price">250 TL</span></div>
-
-<div class="item"><span>El Açması Patatesli Kaşarlı Gözleme</span><span class="price">300 TL</span></div>
-
-<div class="item"><span>El Açması Otlu Peynirli Gözleme</span><span class="price">250 TL</span></div>
-
-<div class="section-title">🍳 Kahvaltı</div>
-
-<div class="kahvalti">
-<strong>Serpme Kahvaltı — 600 TL</strong><br><br>
-
-Bahçeden domates, bahçeden salatalık,
-bahçeden biber, doğal çökelek peyniri,
-beyaz peynir, kaşar peyniri,
-bal-tereyağ, yeşillikler,
-yumurta (sahanda veya haşlama),
-kaşarlı mantar, zeytin,
-reçel çeşitleri.
+<div class="quick-info">
+  <div class="info-card">
+    <strong>Adres</strong>
+    <span>Denizli Muğla Yolu, 48640 Ula / Muğla</span>
+  </div>
+  <div class="info-card">
+    <strong>Telefon</strong>
+    <span>0533 436 55 72</span>
+  </div>
+  <div class="info-card">
+    <strong>Instagram</strong>
+    <span>@naturel_park_np</span>
+  </div>
 </div>
 
-<div class="section-title">🥘 Kavurma & Tost</div>
+<main class="menu-shell">
+  <nav class="category-nav" aria-label="Menü kategorileri">
+    <a href="#gozleme">Gözleme</a>
+    <a href="#sicaklar">Kavurma & Tost</a>
+    <a href="#kahvalti">Kahvaltı</a>
+    <a href="#icecekler">İçecekler</a>
+  </nav>
 
-<div class="item"><span>Sac Kavurma (150g Tek Kişilik)</span><span class="price">500 TL</span></div>
+  <section class="menu-section" id="gozleme">
+    <div class="section-title">
+      <h2>Gözleme Çeşitleri</h2>
+      <span>El açması</span>
+    </div>
+    <div class="items">
+      <div class="item"><span>El Açması Patatesli Gözleme</span><span class="price">250 TL</span></div>
+      <div class="item"><span>El Açması Kıymalı Gözleme</span><span class="price">300 TL</span></div>
+      <div class="item"><span>El Açması Peynirli Gözleme</span><span class="price">250 TL</span></div>
+      <div class="item"><span>El Açması Patlıcanlı Gözleme</span><span class="price">250 TL</span></div>
+      <div class="item"><span>El Açması Patlıcanlı Kaşarlı Gözleme</span><span class="price">300 TL</span></div>
+      <div class="item"><span>El Açması Kıymalı Kaşarlı Gözleme</span><span class="price">400 TL</span></div>
+      <div class="item"><span>El Açması Kaşarlı Gözleme</span><span class="price">250 TL</span></div>
+      <div class="item"><span>El Açması Patatesli Kaşarlı Gözleme</span><span class="price">300 TL</span></div>
+      <div class="item"><span>El Açması Otlu Peynirli Gözleme</span><span class="price">250 TL</span></div>
+    </div>
+  </section>
 
-<div class="item"><span>Karışık Tost</span><span class="price">300 TL</span></div>
+  <section class="menu-section" id="sicaklar">
+    <div class="section-title">
+      <h2>Kavurma & Tost</h2>
+      <span>Sıcak servis</span>
+    </div>
+    <div class="items">
+      <div class="item"><span>Sac Kavurma (150g Tek Kişilik)</span><span class="price">500 TL</span></div>
+      <div class="item"><span>Karışık Tost<small>Sucuk, kaşar, domates, mayonez, ketçap, salça</small></span><span class="price">300 TL</span></div>
+      <div class="item"><span>Kaşarlı Tost</span><span class="price">200 TL</span></div>
+      <div class="item"><span>Menemen</span><span class="price">350 TL</span></div>
+    </div>
+  </section>
 
-<div class="item"><span>Kaşarlı Tost</span><span class="price">200 TL</span></div>
+  <section class="menu-section" id="kahvalti">
+    <div class="section-title">
+      <h2>Kahvaltı</h2>
+      <span>Bahçeden sofraya</span>
+    </div>
+    <div class="items">
+      <div class="item"><span>Serpme Kahvaltı</span><span class="price">600 TL</span></div>
+      <div class="desc">
+        Bahçeden domates, bahçeden salatalık, bahçeden biber, doğal çökelek peyniri,
+        beyaz peynir, kaşar peyniri, bal-tereyağ, yeşillik, yumurta,
+        kaşarlı mantar, zeytin ve reçel çeşitleri.
+      </div>
+    </div>
+  </section>
 
-<div class="item"><span>Menemen</span><span class="price">350 TL</span></div>
-
-<div class="section-title">☕ İçecekler</div>
-
-<div class="item"><span>Çay</span><span class="price">20 TL</span></div>
-
-<div class="item"><span>Kutu Ayran</span><span class="price">30 TL</span></div>
-
-<div class="item"><span>Türk Kahvesi</span><span class="price">70 TL</span></div>
-
-<div class="item"><span>Cola / Fanta / Sprite</span><span class="price">80 TL</span></div>
-
-</div>
+  <section class="menu-section" id="icecekler">
+    <div class="section-title">
+      <h2>İçecekler</h2>
+      <span>Sıcak & soğuk</span>
+    </div>
+    <div class="items">
+      <div class="item"><span>Çay</span><span class="price">20 TL</span></div>
+      <div class="item"><span>Kutu Ayran</span><span class="price">30 TL</span></div>
+      <div class="item"><span>Türk Kahvesi</span><span class="price">70 TL</span></div>
+      <div class="item"><span>Meşrubatlar<small>Cola, Fanta, Sprite</small></span><span class="price">80 TL</span></div>
+    </div>
+  </section>
+</main>
 
 <footer>
-
-<h3>Natural Park</h3>
-
-<p>📞 0533 436 55 72</p>
-
-<p>📍 Denizli Muğla Yolu<br>
-48640 Ula / Muğla</p>
-
-<p>📷 @naturel_park_np</p>
-
-<p>Doğal Lezzet • Huzurlu Ortam • Eşsiz Manzara</p>
-
+  <div class="footer-inner">
+    <div>
+      <h3>Natural Park</h3>
+      <p>Doğal Lezzet • Huzurlu Ortam • Eşsiz Manzara</p>
+      <p>Denizli Muğla Yolu<br>48640 Ula / Muğla<br>Türkiye</p>
+    </div>
+    <div class="footer-links">
+      <a href="tel:05334365572">0533 436 55 72</a>
+      <a href="https://wa.me/905334365572">WhatsApp</a>
+      <a href="https://instagram.com/naturel_park_np">@naturel_park_np</a>
+      <a href="https://www.google.com/maps/search/Denizli+Muğla+Yolu+48640+Ula+Muğla+Türkiye">Konum</a>
+    </div>
+  </div>
 </footer>
 
 </body>
-</html>https://file+.vscode-resource.vscode-cdn.net/Users/alpercakir/Documents/GitHub/gozleme.jpeg?version%3D1780352882468https://file+.vscode-resource.vscode-cdn.net/Users/alpercakir/Documents/GitHub/gozleme.jpeg?version%3D1780352882468
+</html>
