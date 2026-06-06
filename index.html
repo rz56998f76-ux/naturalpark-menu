@@ -223,41 +223,6 @@ a:focus-visible{
   white-space:nowrap;
 }
 
-.category-photo{
-  position:relative;
-  min-height:260px;
-  margin-bottom:12px;
-  border-radius:8px;
-  overflow:hidden;
-  background:var(--forest);
-  box-shadow:var(--shadow);
-}
-
-.category-photo img{
-  width:100%;
-  height:100%;
-  min-height:260px;
-  display:block;
-  object-fit:cover;
-}
-
-.category-photo span{
-  position:absolute;
-  left:16px;
-  bottom:16px;
-  max-width:calc(100% - 32px);
-  padding:9px 12px;
-  border-radius:999px;
-  background:rgba(255,255,255,.92);
-  color:var(--forest);
-  font-size:14px;
-  font-weight:900;
-}
-
-.category-photo-spaced{
-  margin-top:12px;
-}
-
 .items{
   display:grid;
   grid-template-columns:repeat(2, minmax(0, 1fr));
@@ -405,11 +370,6 @@ footer p{
     display:none;
   }
 
-  .category-photo,
-  .category-photo img{
-    min-height:190px;
-  }
-
   .footer-links{
     justify-content:flex-start;
   }
@@ -476,10 +436,6 @@ footer p{
       <h2>Gözleme Çeşitleri</h2>
       <span>El açması</span>
     </div>
-    <div class="category-photo">
-      <img src="images/gozleme.jpeg" alt="Natural Park gözleme sunumu">
-      <span>El açması gözleme</span>
-    </div>
     <div class="items">
       <div class="item"><span>El Açması Patatesli Gözleme</span><span class="price">250 TL</span></div>
       <div class="item"><span>El Açması Kıymalı Gözleme</span><span class="price">300 TL</span></div>
@@ -511,10 +467,6 @@ footer p{
       <h2>Kahvaltı</h2>
       <span>Bahçeden sofraya</span>
     </div>
-    <div class="category-photo">
-      <img src="images/kahvalti-sofra.jpeg" alt="Natural Park kahvaltı sofrası">
-      <span>Bahçeden sofraya kahvaltı</span>
-    </div>
     <div class="items">
       <div class="item"><span>Serpme Kahvaltı</span><span class="price">700 TL</span></div>
       <div class="desc">
@@ -522,10 +474,6 @@ footer p{
         beyaz peynir, kaşar peyniri, bal-tereyağ, yeşillik, yumurta,
         kaşarlı mantar, zeytin ve reçel çeşitleri.
       </div>
-    </div>
-    <div class="category-photo category-photo-spaced">
-      <img src="images/naturalpark-bahce.jpeg" alt="Natural Park bahçe ve doğa manzarası">
-      <span>Doğanın içinde sakin bir mola</span>
     </div>
   </section>
 
