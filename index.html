@@ -301,6 +301,26 @@ a:focus-visible{
   object-fit:cover;
 }
 
+.section-photo{
+  margin-bottom:12px;
+}
+
+.section-photo figure{
+  height:320px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--paper);
+  box-shadow:0 10px 28px rgba(34,45,29,.08);
+}
+
+.section-photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
 footer{
   background:var(--forest);
   color:white;
@@ -403,6 +423,10 @@ footer p{
     scroll-snap-align:start;
   }
 
+  .section-photo figure{
+    height:260px;
+  }
+
   .quick-info{
     margin-top:14px;
   }
@@ -503,6 +527,9 @@ footer p{
     <div class="section-title">
       <h2>Kavurma & Tost</h2>
       <span>Sıcak servis</span>
+    </div>
+    <div class="section-photo" aria-label="Sac kavurma fotoğrafı">
+      <figure><img src="images/sac-kavurma.jpeg?v=20260623" alt="Çukur sac üzerinde sac kavurma, salata ve bazlama"></figure>
     </div>
     <div class="items">
       <div class="item"><span>Sac Kavurma (90g Tek Kişilik)</span><span class="price">500 TL</span></div>
