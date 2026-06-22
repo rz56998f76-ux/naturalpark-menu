@@ -274,6 +274,33 @@ a:focus-visible{
   line-height:1.7;
 }
 
+.photo-strip{
+  display:grid;
+  grid-template-columns:1.35fr 1fr 1fr;
+  gap:10px;
+  margin-bottom:12px;
+}
+
+.photo-strip figure{
+  min-height:210px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:var(--paper);
+  box-shadow:0 10px 28px rgba(34,45,29,.08);
+}
+
+.photo-strip figure:first-child{
+  grid-row:span 2;
+}
+
+.photo-strip img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
 footer{
   background:var(--forest);
   color:white;
@@ -358,6 +385,24 @@ footer p{
     grid-template-columns:1fr;
   }
 
+  .photo-strip{
+    display:flex;
+    gap:10px;
+    margin-left:-16px;
+    margin-right:-16px;
+    padding:0 16px 4px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+  }
+
+  .photo-strip figure,
+  .photo-strip figure:first-child{
+    flex:0 0 min(78vw, 340px);
+    min-height:260px;
+    grid-row:auto;
+    scroll-snap-align:start;
+  }
+
   .quick-info{
     margin-top:14px;
   }
@@ -435,6 +480,11 @@ footer p{
     <div class="section-title">
       <h2>Gözleme Çeşitleri</h2>
       <span>El açması</span>
+    </div>
+    <div class="photo-strip" aria-label="Gözleme fotoğrafları">
+      <figure><img src="images/gozleme-1.jpeg" alt="Natural Park gözleme sunumu"></figure>
+      <figure><img src="images/gozleme-2.jpeg" alt="El açması gözleme hazırlığı"></figure>
+      <figure><img src="images/gozleme-3.jpeg" alt="Sıcak servis edilen gözleme"></figure>
     </div>
     <div class="items">
       <div class="item"><span>El Açması Patatesli Gözleme</span><span class="price">250 TL</span></div>
